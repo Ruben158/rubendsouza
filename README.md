@@ -41,3 +41,4 @@ python3 -m http.server 8000
 
 - Colors, fonts, and spacing are defined as CSS custom properties at the top of `style.css` under `:root`.
 - Each resume section (Experience, Skills, Education) is a clearly labeled block in `index.html` — edit the text directly there.
+
