@@ -48,24 +48,24 @@
       </p>
 
       <div class="ledger">
-        <div class="ledger-row">
+        <div class="ledger-row reveal">
           <span class="ledger-tag">metric_01</span>
-          <span class="ledger-value">~20 hrs<span class="ledger-unit">/week</span></span>
+          <span class="ledger-value" data-count-to="20" data-suffix=" hrs">20 hrs<span class="ledger-unit">/week</span></span>
           <span class="ledger-desc">manual review time eliminated via a self-built Gemini automation workflow</span>
         </div>
-        <div class="ledger-row">
+        <div class="ledger-row reveal">
           <span class="ledger-tag">metric_02</span>
-          <span class="ledger-value">19,000<span class="ledger-unit">records</span></span>
+          <span class="ledger-value" data-count-to="19000" data-format="comma">19,000<span class="ledger-unit">records</span></span>
           <span class="ledger-desc">audited every 6 months, with full resolution of every flagged discrepancy</span>
         </div>
-        <div class="ledger-row">
+        <div class="ledger-row reveal">
           <span class="ledger-tag">metric_03</span>
-          <span class="ledger-value">50%<span class="ledger-unit">reduction</span></span>
+          <span class="ledger-value" data-count-to="50" data-suffix="%">50%<span class="ledger-unit">reduction</span></span>
           <span class="ledger-desc">in dataset requiring manual review, after redesigning the audit's BAU process</span>
         </div>
-        <div class="ledger-row">
+        <div class="ledger-row reveal">
           <span class="ledger-tag">metric_04</span>
-          <span class="ledger-value">15%<span class="ledger-unit">lift</span></span>
+          <span class="ledger-value" data-count-to="15" data-suffix="%">15%<span class="ledger-unit">lift</span></span>
           <span class="ledger-desc">measurable improvement in campaign effectiveness from data-driven strategy</span>
         </div>
       </div>
@@ -84,62 +84,93 @@
   <section class="section" id="log">
     <div class="section-inner">
       <p class="section-label"><span class="section-idx">01</span> Activity Log</p>
-      <h2 class="section-title">Where the work happened</h2>
+      <div class="log-header">
+        <h2 class="section-title">Where the work happened</h2>
+        <button class="expand-toggle" id="expand-toggle" type="button" aria-expanded="false">
+          <span class="expand-icon">⊕</span><span class="expand-label"> Expand all</span>
+        </button>
+      </div>
+
+      <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter experience by skill">
+        <button class="filter-chip is-active" data-filter="all" type="button">All</button>
+        <button class="filter-chip" data-filter="sql" type="button">SQL</button>
+        <button class="filter-chip" data-filter="automation" type="button">Automation</button>
+        <button class="filter-chip" data-filter="governance" type="button">Data Governance</button>
+        <button class="filter-chip" data-filter="analysis" type="button">Sales / Trend Analysis</button>
+        <button class="filter-chip" data-filter="ops" type="button">Ops / Admin</button>
+      </div>
 
       <div class="entries" id="experience">
 
-        <article class="entry">
-          <div class="entry-meta">
-            <span class="entry-date">NOV 2024 — PRESENT</span>
-            <span class="entry-status status-live">ACTIVE</span>
-          </div>
-          <h3 class="entry-role">Reference Data Analyst</h3>
-          <p class="entry-org">Nielsen Media</p>
-          <ul class="entry-list">
-            <li>Designed and personally built a Gemini-based automation workflow to validate reference data records, cutting manual review time by <strong>~20 hours/week</strong> and improving data reliability.</li>
-            <li>Extracted, filtered, and validated large-scale datasets using SQL to deliver actionable insight for core product teams.</li>
-            <li>Audited <strong>~19,000</strong> reference data records over 6 months, resolving every flagged discrepancy through manual verification.</li>
-            <li>Identified and eliminated duplicate content to establish clean relational links, improving cross-platform consistency.</li>
-            <li>Helped redesign the data validation BAU process, cutting the audit scope by <strong>~50%</strong>.</li>
-            <li>Coordinated with software and process teams to resolve data issues in line with product requirements.</li>
-          </ul>
-          <div class="entry-tags">
-            <span>SQL</span><span>Gemini API</span><span>Data Governance</span><span>Process Redesign</span>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="entry-meta">
-            <span class="entry-date">JUL 2023 — OCT 2024</span>
-          </div>
-          <h3 class="entry-role">Marketing Data Analyst</h3>
-          <p class="entry-org">Ego Premium Private Limited</p>
-          <ul class="entry-list">
-            <li>Analyzed regional and city-level sales data to surface market trends, directing targeted campaigns and resource allocation.</li>
-            <li>Partnered cross-functionally to align data insight with social content development and campaign execution.</li>
-            <li>Coauthored data-driven sales strategy and tracked performance metrics, driving a <strong>15%</strong> measurable improvement in campaign effectiveness.</li>
-          </ul>
-          <div class="entry-tags">
-            <span>Sales Analysis</span><span>Trend Analysis</span><span>Campaign Strategy</span>
+        <article class="entry reveal" data-tags="sql automation governance">
+          <button class="entry-summary" type="button" aria-expanded="false">
+            <div class="entry-meta">
+              <span class="entry-date">NOV 2024 — PRESENT</span>
+              <span class="entry-status status-live">ACTIVE</span>
+            </div>
+            <h3 class="entry-role">Reference Data Analyst</h3>
+            <p class="entry-org">Nielsen Media</p>
+            <div class="entry-tags">
+              <span>SQL</span><span>Gemini API</span><span>Data Governance</span><span>Process Redesign</span>
+            </div>
+            <span class="entry-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="entry-body">
+            <ul class="entry-list">
+              <li>Designed and personally built a Gemini-based automation workflow to validate reference data records, cutting manual review time by <strong>~20 hours/week</strong> and improving data reliability.</li>
+              <li>Extracted, filtered, and validated large-scale datasets using SQL to deliver actionable insight for core product teams.</li>
+              <li>Audited <strong>~19,000</strong> reference data records over 6 months, resolving every flagged discrepancy through manual verification.</li>
+              <li>Identified and eliminated duplicate content to establish clean relational links, improving cross-platform consistency.</li>
+              <li>Helped redesign the data validation BAU process, cutting the audit scope by <strong>~50%</strong>.</li>
+              <li>Coordinated with software and process teams to resolve data issues in line with product requirements.</li>
+            </ul>
           </div>
         </article>
 
-        <article class="entry">
-          <div class="entry-meta">
-            <span class="entry-date">FEB 2019 — JUN 2023</span>
-          </div>
-          <h3 class="entry-role">Communications Support Associate / Management Intern</h3>
-          <p class="entry-org">Curiosum Tech Private Limited</p>
-          <ul class="entry-list">
-            <li>Administered a database of <strong>1,000+</strong> membership profiles and a <strong>15,000+</strong> subscriber mailing list, maintaining data hygiene throughout.</li>
-            <li>Led process improvement initiatives across IT and internal operations, boosting workflow speed and documentation accuracy.</li>
-            <li>Managed vendor relations and enforced job-portal verification for data security and compliance.</li>
-            <li>Coordinated on-ground event operations for Formula Bharat 2020 and 2022.</li>
-          </ul>
-          <div class="entry-tags">
-            <span>Database Admin</span><span>Vendor Relations</span><span>Event Ops</span>
+        <article class="entry reveal" data-tags="analysis">
+          <button class="entry-summary" type="button" aria-expanded="false">
+            <div class="entry-meta">
+              <span class="entry-date">JUL 2023 — OCT 2024</span>
+            </div>
+            <h3 class="entry-role">Marketing Data Analyst</h3>
+            <p class="entry-org">Ego Premium Private Limited</p>
+            <div class="entry-tags">
+              <span>Sales Analysis</span><span>Trend Analysis</span><span>Campaign Strategy</span>
+            </div>
+            <span class="entry-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="entry-body">
+            <ul class="entry-list">
+              <li>Analyzed regional and city-level sales data to surface market trends, directing targeted campaigns and resource allocation.</li>
+              <li>Partnered cross-functionally to align data insight with social content development and campaign execution.</li>
+              <li>Coauthored data-driven sales strategy and tracked performance metrics, driving a <strong>15%</strong> measurable improvement in campaign effectiveness.</li>
+            </ul>
           </div>
         </article>
+
+        <article class="entry reveal" data-tags="ops">
+          <button class="entry-summary" type="button" aria-expanded="false">
+            <div class="entry-meta">
+              <span class="entry-date">FEB 2019 — JUN 2023</span>
+            </div>
+            <h3 class="entry-role">Communications Support Associate / Management Intern</h3>
+            <p class="entry-org">Curiosum Tech Private Limited</p>
+            <div class="entry-tags">
+              <span>Database Admin</span><span>Vendor Relations</span><span>Event Ops</span>
+            </div>
+            <span class="entry-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="entry-body">
+            <ul class="entry-list">
+              <li>Administered a database of <strong>1,000+</strong> membership profiles and a <strong>15,000+</strong> subscriber mailing list, maintaining data hygiene throughout.</li>
+              <li>Led process improvement initiatives across IT and internal operations, boosting workflow speed and documentation accuracy.</li>
+              <li>Managed vendor relations and enforced job-portal verification for data security and compliance.</li>
+              <li>Coordinated on-ground event operations for Formula Bharat 2020 and 2022.</li>
+            </ul>
+          </div>
+        </article>
+
+        <p class="no-results" id="no-results" hidden>No entries match that filter — try "All."</p>
 
       </div>
     </div>
@@ -152,19 +183,19 @@
       <h2 class="section-title">What I work with</h2>
 
       <div class="skill-grid">
-        <div class="skill-block">
+        <div class="skill-block reveal">
           <h3 class="skill-head">Data Analytics &amp; BI</h3>
           <p class="skill-items">SQL (extraction, filtering, joins) · Python · Power BI · Looker Studio · Advanced Excel · Data Modeling · Trend &amp; Regional Sales Analysis</p>
         </div>
-        <div class="skill-block">
+        <div class="skill-block reveal">
           <h3 class="skill-head">AI &amp; Automation</h3>
           <p class="skill-items">Self-built Gemini automation workflows · Google AppSheet · Claude Code · LLM-assisted data workflows · Prompt Engineering</p>
         </div>
-        <div class="skill-block">
+        <div class="skill-block reveal">
           <h3 class="skill-head">Data Governance</h3>
           <p class="skill-items">Data Quality Assurance · Manual Auditing &amp; Verification · Process Redesign · Risk Mitigation · Cross-Functional Coordination</p>
         </div>
-        <div class="skill-block">
+        <div class="skill-block reveal">
           <h3 class="skill-head">Knowledge &amp; Process Management</h3>
           <p class="skill-items">Google NotebookLM · Process Mapping &amp; Documentation · Vendor Relations</p>
         </div>
@@ -179,7 +210,7 @@
       <h2 class="section-title">Education &amp; certifications</h2>
 
       <div class="records-grid">
-        <div class="record-col">
+        <div class="record-col reveal">
           <h3 class="record-head">Education</h3>
           <div class="record-item">
             <span class="record-year">2020 — 2023</span>
@@ -193,7 +224,7 @@
           </div>
         </div>
 
-        <div class="record-col">
+        <div class="record-col reveal">
           <h3 class="record-head">Certifications</h3>
           <div class="record-item">
             <p class="record-name">AI Agents and Agentic AI · AI Governance · Claude Code · Python · Prompt Engineering for Everyone Bootcamp</p>
