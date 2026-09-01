@@ -48,26 +48,30 @@
       </p>
 
       <div class="ledger">
-        <div class="ledger-row reveal">
+        <button class="ledger-row reveal" type="button" data-target-entry="entry-nielsen" data-target-bullet="metric_01">
           <span class="ledger-tag">metric_01</span>
           <span class="ledger-value" data-count-to="20" data-suffix=" hrs">20 hrs<span class="ledger-unit">/week</span></span>
           <span class="ledger-desc">manual review time eliminated via a self-built Gemini automation workflow</span>
-        </div>
-        <div class="ledger-row reveal">
+          <span class="ledger-jump" aria-hidden="true">See where →</span>
+        </button>
+        <button class="ledger-row reveal" type="button" data-target-entry="entry-nielsen" data-target-bullet="metric_02">
           <span class="ledger-tag">metric_02</span>
           <span class="ledger-value" data-count-to="19000" data-format="comma">19,000<span class="ledger-unit">records</span></span>
           <span class="ledger-desc">audited every 6 months, with full resolution of every flagged discrepancy</span>
-        </div>
-        <div class="ledger-row reveal">
+          <span class="ledger-jump" aria-hidden="true">See where →</span>
+        </button>
+        <button class="ledger-row reveal" type="button" data-target-entry="entry-nielsen" data-target-bullet="metric_03">
           <span class="ledger-tag">metric_03</span>
           <span class="ledger-value" data-count-to="50" data-suffix="%">50%<span class="ledger-unit">reduction</span></span>
           <span class="ledger-desc">in dataset requiring manual review, after redesigning the audit's BAU process</span>
-        </div>
-        <div class="ledger-row reveal">
+          <span class="ledger-jump" aria-hidden="true">See where →</span>
+        </button>
+        <button class="ledger-row reveal" type="button" data-target-entry="entry-ego" data-target-bullet="metric_04">
           <span class="ledger-tag">metric_04</span>
           <span class="ledger-value" data-count-to="15" data-suffix="%">15%<span class="ledger-unit">lift</span></span>
           <span class="ledger-desc">measurable improvement in campaign effectiveness from data-driven strategy</span>
-        </div>
+          <span class="ledger-jump" aria-hidden="true">See where →</span>
+        </button>
       </div>
 
       <div class="hero-actions">
@@ -102,7 +106,7 @@
 
       <div class="entries" id="experience">
 
-        <article class="entry reveal" data-tags="sql automation governance">
+        <article class="entry reveal" id="entry-nielsen" data-tags="sql automation governance">
           <button class="entry-summary" type="button" aria-expanded="false">
             <div class="entry-meta">
               <span class="entry-date">NOV 2024 — PRESENT</span>
@@ -117,17 +121,17 @@
           </button>
           <div class="entry-body">
             <ul class="entry-list">
-              <li>Designed and personally built a Gemini-based automation workflow to validate reference data records, cutting manual review time by <strong>~20 hours/week</strong> and improving data reliability.</li>
+              <li data-bullet="metric_01">Designed and personally built a Gemini-based automation workflow to validate reference data records, cutting manual review time by <strong>~20 hours/week</strong> and improving data reliability.</li>
               <li>Extracted, filtered, and validated large-scale datasets using SQL to deliver actionable insight for core product teams.</li>
-              <li>Audited <strong>~19,000</strong> reference data records over 6 months, resolving every flagged discrepancy through manual verification.</li>
+              <li data-bullet="metric_02">Audited <strong>~19,000</strong> reference data records over 6 months, resolving every flagged discrepancy through manual verification.</li>
               <li>Identified and eliminated duplicate content to establish clean relational links, improving cross-platform consistency.</li>
-              <li>Helped redesign the data validation BAU process, cutting the audit scope by <strong>~50%</strong>.</li>
+              <li data-bullet="metric_03">Helped redesign the data validation BAU process, cutting the audit scope by <strong>~50%</strong>.</li>
               <li>Coordinated with software and process teams to resolve data issues in line with product requirements.</li>
             </ul>
           </div>
         </article>
 
-        <article class="entry reveal" data-tags="analysis">
+        <article class="entry reveal" id="entry-ego" data-tags="analysis">
           <button class="entry-summary" type="button" aria-expanded="false">
             <div class="entry-meta">
               <span class="entry-date">JUL 2023 — OCT 2024</span>
@@ -143,7 +147,7 @@
             <ul class="entry-list">
               <li>Analyzed regional and city-level sales data to surface market trends, directing targeted campaigns and resource allocation.</li>
               <li>Partnered cross-functionally to align data insight with social content development and campaign execution.</li>
-              <li>Coauthored data-driven sales strategy and tracked performance metrics, driving a <strong>15%</strong> measurable improvement in campaign effectiveness.</li>
+              <li data-bullet="metric_04">Coauthored data-driven sales strategy and tracked performance metrics, driving a <strong>15%</strong> measurable improvement in campaign effectiveness.</li>
             </ul>
           </div>
         </article>

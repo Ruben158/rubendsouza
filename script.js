@@ -114,8 +114,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 /* =========================================================
    EXPERIENCE: FILTER + EXPAND/COLLAPSE
 ========================================================= */
-(function initExperience() {
-  const filterBar = document.getElementById('filter-bar');
+(function initExperience() {  const filterBar = document.getElementById('filter-bar');
   const entries = Array.from(document.querySelectorAll('.entry'));
   const expandToggle = document.getElementById('expand-toggle');
   const noResults = document.getElementById('no-results');
@@ -180,4 +179,49 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
     });
   }
 })();
+
+/* =========================================================
+   LEDGER METRICS: CLICK-TO-JUMP
+========================================================= */
+(function initLedgerJump() {
+  const ledgerRows = document.querySelectorAll('.ledger-row[data-target-entry]');
+  if (!ledgerRows.length) return;
+
+  ledgerRows.forEach(row => {
+    row.addEventListener('click', () => {
+      const entryId = row.getAttribute('data-target-entry');
+      const bulletKey = row.getAttribute('data-target-bullet');
+      const entry = document.getElementById(entryId);
+      if (!entry) return;
+
+      // Clear any active experience filter so the target entry is guaranteed visible
+      const filterBar = document.getElementById('filter-bar');
+      if (filterBar) {
+        const allChip = filterBar.querySelector('.filter-chip[data-filter="all"]');
+        if (allChip && !allChip.classList.contains('is-active')) {
+          allChip.click();
+        }
+      }
+
+      // Expand the entry
+      const summary = entry.querySelector('.entry-summary');
+      if (summary) summary.setAttribute('aria-expanded', 'true');
+
+      // Scroll the entry into view, accounting for the sticky header
+      const headerOffset = 90;
+      const top = entry.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+      window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+
+      // Flash-highlight the specific bullet once the scroll settles
+      const bullet = bulletKey ? entry.querySelector(`[data-bullet="${bulletKey}"]`) : null;
+      if (bullet) {
+        window.setTimeout(() => {
+          bullet.classList.add('bullet-flash');
+          window.setTimeout(() => bullet.classList.remove('bullet-flash'), 1800);
+        }, prefersReducedMotion ? 0 : 500);
+      }
+    });
+  });
+})();
+
 
